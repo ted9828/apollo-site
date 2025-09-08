@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>APOLLO · Autonomous Racing Team</title>
+  <meta name="description" content="TEAM APOLLO — Hankyong National Univ. Autonomous Racing Team" />
+  <link rel="icon" href="assets/logo.png" />
+  <!-- Tailwind CDN (no build) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#0C1E2F',
+            accent: '#D5A559'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    /* subtle card shadow & hairline border */
+    .card { border: 1px solid rgba(0,0,0,.06); box-shadow: 0 2px 10px rgba(0,0,0,.04); }
+    .hairline { border-top: 1px solid rgba(0,0,0,.06); }
+  </style>
+</head>
+<body class="text-zinc-900 bg-white">
+  <!-- Header / Navbar -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur hairline">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="APOLLO" class="h-10 w-10 rounded-full border" />
+        <div class="leading-tight">
+          <div class="font-bold tracking-tight">APOLLO</div>
+          <div class="text-xs text-zinc-500">Autonomous Racing Team · Since 2023</div>
+        </div>
+      </a>
+
+      <nav id="navLinks" class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#sponsor" class="hover:text-zinc-600">Sponsor</a>
+        <a href="#parts" class="hover:text-zinc-600">Parts</a>
+        <a href="#since" class="hover:text-zinc-600">SINCE</a>
+        <a href="#activities" class="hover:text-zinc-600">Activities</a>
+        <a href="#contact" class="hover:text-zinc-600">Contact</a>
+        <a href="https://github.com/TEAM_GITHUB" target="_blank" class="px-3 py-1.5 rounded-full border hover:bg-zinc-50">GitHub</a>
+        <a href="https://www.instagram.com/hknu_apollo/" target="_blank" class="px-3 py-1.5 rounded-full bg-brand text-white hover:opacity-90">Instagram</a>
+      </nav>
+
+      <button id="navBtn" class="md:hidden p-2" aria-label="menu">
+        <!-- simple burger -->
+        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div id="navDrawer" class="hidden md:hidden hairline">
+      <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-3 text-sm">
+        <a href="#sponsor" onclick="toggleNav()">Sponsor</a>
+        <a href="#parts" onclick="toggleNav()">Parts</a>
+        <a href="#since" onclick="toggleNav()">SINCE</a>
+        <a href="#activities" onclick="toggleNav()">Activities</a>
+        <a href="#contact" onclick="toggleNav()">Contact</a>
+        <a href="https://github.com/TEAM_GITHUB" target="_blank" class="px-3 py-2 rounded-xl border w-max">GitHub</a>
+        <a href="https://www.instagram.com/hknu_apollo/" target="_blank" class="px-3 py-2 rounded-xl bg-brand text-white w-max">Instagram</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative">
+    <div class="absolute inset-0 bg-[radial-gradient(1200px_600px_at_10%_-10%,#e5e7eb,transparent)]"></div>
+    <div class="relative max-w-7xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <img src="assets/logo.png" alt="TEAM APOLLO" class="h-24 w-24 md:h-28 md:w-28 rounded-full border mb-6 object-contain">
+        <h1 class="text-4xl md:text-6xl font-semibold leading-tight tracking-tight">
+          Full‑stack <span class="underline decoration-zinc-300">Autonomous</span> Racing Team
+        </h1>
+        <p class="mt-5 text-lg text-zinc-600">
+          자작차 & 자율주행 — 전자, 인지·판단, 모델링, 제작까지 풀스택으로 탐구합니다.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="#sponsor" class="px-5 py-3 rounded-full bg-brand text-white hover:opacity-90">후원하기</a>
+          <a href="#parts" class="px-5 py-3 rounded-full border hover:bg-zinc-50">파트 보기</a>
+          <a href="https://github.com/TEAM_GITHUB" target="_blank" class="px-5 py-3 rounded-full border hover:bg-zinc-50">GitHub</a>
+        </div>
+      </div>
+      <div>
+        <div class="relative card rounded-3xl bg-white p-6">
+          <img src="https://images.unsplash.com/photo-1517142089942-ba376ce32a2e?q=80&w=1400&auto=format&fit=crop"
+               alt="vehicle" class="aspect-video w-full object-cover rounded-2xl">
+          <div class="mt-4 grid grid-cols-3 gap-3 text-sm">
+            <span class="px-3 py-2 rounded-xl bg-zinc-100 text-center">자작차</span>
+            <span class="px-3 py-2 rounded-xl bg-zinc-100 text-center">자율주행</span>
+            <span class="px-3 py-2 rounded-xl bg-zinc-100 text-center">ROS</span>
+            <span class="px-3 py-2 rounded-xl bg-zinc-100 text-center">Perception</span>
+            <span class="px-3 py-2 rounded-xl bg-zinc-100 text-center">Planning</span>
+            <span class="px-3 py-2 rounded-xl bg-zinc-100 text-center">Testing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsor -->
+  <section id="sponsor" class="py-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-2">후원 & 파트너</h2>
+      <p class="text-zinc-600">장비/부품/공간 후원 및 공동 연구를 환영합니다.</p>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="card rounded-2xl bg-white p-6">
+          <h3 class="font-medium">후원 방법</h3>
+          <ul class="mt-3 text-sm text-zinc-700 list-disc pl-5 space-y-2">
+            <li>현물: 센서, 제어기, 배터리, 공구, 가공 지원</li>
+            <li>현금: 대회 참가비, 시제품 제작비</li>
+            <li>공동 프로젝트 및 산학 협력</li>
+          </ul>
+          <a href="#contact" class="mt-4 inline-block px-4 py-2 rounded-xl border hover:bg-zinc-50 text-sm">후원 제안하기</a>
+        </div>
+        <div class="card rounded-2xl bg-white p-6">
+          <h3 class="font-medium">후원사 노출</h3>
+          <p class="text-sm text-zinc-700 mt-2">메인/푸터/리포트에 로고/링크를 노출합니다.</p>
+          <div class="mt-4 grid grid-cols-2 md:grid-cols-3 gap-4 items-center">
+            <a href="#" class="rounded-xl border p-4 grid place-items-center">
+              <div class="text-center leading-tight">
+                <div class="text-xs font-semibold">Hankyong Nat'l Univ.</div>
+                <div class="text-sm">APCLAB</div>
+              </div>
+            </a>
+            <div class="rounded-xl border border-dashed p-4 grid place-items-center text-zinc-400 text-sm">Your Logo</div>
+            <div class="rounded-xl border border-dashed p-4 grid place-items-center text-zinc-400 text-sm">Your Logo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parts -->
+  <section id="parts" class="py-16 hairline">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-2">파트 소개</h2>
+      <p class="text-zinc-600">전자 · 인지판단 · 모델링 · 제작</p>
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        
+        <div class="card rounded-2xl bg-white p-6">
+          <h3 class="font-medium">전자(Electronics)</h3>
+          <p class="text-sm text-zinc-700 mt-2">전장 설계, 배터리 매니지먼트, CAN/UART, 센서 인터페이스.</p>
+          <a href="https://github.com/TEAM_GITHUB" target="_blank" class="mt-3 inline-block text-sm underline">관련 깃 리포 보기</a>
+        </div>
+        <div class="card rounded-2xl bg-white p-6">
+          <h3 class="font-medium">인지판단(Perception & Planning)</h3>
+          <p class="text-sm text-zinc-700 mt-2">카메라·라이다 인식, 센서퓨전, 경로계획, 제어.</p>
+          <a href="https://github.com/TEAM_GITHUB" target="_blank" class="mt-3 inline-block text-sm underline">관련 깃 리포 보기</a>
+        </div>
+        <div class="card rounded-2xl bg-white p-6">
+          <h3 class="font-medium">모델링(Modeling)</h3>
+          <p class="text-sm text-zinc-700 mt-2">CAD/FEA, 프레임·서스펜션·강성해석, 경량화.</p>
+          <a href="https://github.com/TEAM_GITHUB" target="_blank" class="mt-3 inline-block text-sm underline">관련 깃 리포 보기</a>
+        </div>
+        <div class="card rounded-2xl bg-white p-6">
+          <h3 class="font-medium">제작(Fabrication)</h3>
+          <p class="text-sm text-zinc-700 mt-2">용접·CNC·3D프린팅, 조립 및 안전 테스트, 트랙 검증.</p>
+          <a href="https://github.com/TEAM_GITHUB" target="_blank" class="mt-3 inline-block text-sm underline">관련 깃 리포 보기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SINCE -->
+  <section id="since" class="py-16 hairline">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-2">SINCE</h2>
+      <p class="text-zinc-600">연혁과 주요 이정표</p>
+      <div class="mt-8 grid gap-4">
+        
+        <div class="card rounded-2xl bg-white p-6 flex items-start gap-4">
+          <div class="h-10 w-16 rounded-xl bg-brand text-white grid place-items-center font-semibold">2023</div>
+          <p class="text-zinc-700">APOLLO 창립, 첫 자작차 플랫폼 설계</p>
+        </div>
+        <div class="card rounded-2xl bg-white p-6 flex items-start gap-4">
+          <div class="h-10 w-16 rounded-xl bg-brand text-white grid place-items-center font-semibold">2024</div>
+          <p class="text-zinc-700">자율주행 스택 베타, 대회 참가</p>
+        </div>
+        <div class="card rounded-2xl bg-white p-6 flex items-start gap-4">
+          <div class="h-10 w-16 rounded-xl bg-brand text-white grid place-items-center font-semibold">2025</div>
+          <p class="text-zinc-700">산학 협력 확대, APCLAB 후원 확정</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities -->
+  <section id="activities" class="py-16 hairline">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-2">활동 내용</h2>
+      <p class="text-zinc-600">세미나 · 트랙 테스트 · 대회 참가 · 오픈소스</p>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        
+        <div class="card rounded-2xl bg-white overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1200&auto=format&fit=crop" alt="" class="aspect-video w-full object-cover" />
+          <div class="p-6">
+            <h3 class="font-medium">세미나 & 스터디</h3>
+            <p class="text-sm text-zinc-600 mt-1">ROS/자율주행 알고리즘 스터디와 논문 리딩</p>
+          </div>
+        </div>
+        <div class="card rounded-2xl bg-white overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1519750783826-e2420f4d687f?q=80&w=1200&auto=format&fit=crop" alt="" class="aspect-video w-full object-cover" />
+          <div class="p-6">
+            <h3 class="font-medium">트랙 테스트</h3>
+            <p class="text-sm text-zinc-600 mt-1">센서 캘리브레이션과 주행 알고리즘 검증</p>
+          </div>
+        </div>
+        <div class="card rounded-2xl bg-white overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1544829728-e5cb04f405a9?q=80&w=1200&auto=format&fit=crop" alt="" class="aspect-video w-full object-cover" />
+          <div class="p-6">
+            <h3 class="font-medium">대회 참가</h3>
+            <p class="text-sm text-zinc-600 mt-1">학생 포뮬러/자율주행 챌린지 도전</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 hairline">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-semibold mb-2">Contact</h2>
+      <p class="text-zinc-600">후원·협업·가입 문의</p>
+      <div class="mt-6 grid md:grid-cols-2 gap-8">
+        <div class="card rounded-2xl bg-white p-6">
+          <div class="text-zinc-700">이메일: <a class="underline" href="mailto:dmlee1204@gmail.com">dmlee1204@gmail.com</a></div>
+          <div class="mt-2 text-zinc-700">Instagram: <a class="underline" href="https://www.instagram.com/hknu_apollo/" target="_blank">@hknu_apollo</a></div>
+          <div class="mt-4 text-sm text-zinc-600">GitHub 조직/리포 URL을 알려주시면 이 페이지에도 버튼을 추가해 드릴게요.</div>
+        </div>
+        <div class="card rounded-2xl bg-white p-6">
+          <form onsubmit="event.preventDefault(); alert('데모 폼 — 실제 전송은 Google Form 또는 백엔드 연동이 필요합니다.');" class="grid gap-4">
+            <input required placeholder="이름" class="w-full border rounded-xl px-4 py-3" />
+            <input type="email" required placeholder="이메일" class="w-full border rounded-xl px-4 py-3" />
+            <textarea required placeholder="메시지" rows="4" class="w-full border rounded-xl px-4 py-3"></textarea>
+            <button class="rounded-full px-5 py-3 bg-brand text-white">보내기</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="hairline">
+    <div class="max-w-7xl mx-auto px-4 py-6 text-xs text-zinc-600 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <img src="assets/logo.png" alt="APOLLO" class="h-6 w-6 rounded-full border" />
+        <span>© {"0".format(__import__("datetime").datetime.now().year)} APOLLO · Autonomous Racing Team · Since 2023</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-zinc-500">Sponsor</span>
+        <span class="px-2 py-1 rounded-lg border bg-white">APCLAB</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      const d = document.getElementById('navDrawer');
+      d.classList.toggle('hidden');
+    }
+    document.getElementById('navBtn').addEventListener('click', toggleNav);
+  </script>
+</body>
+</html>
